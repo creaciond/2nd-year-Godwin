@@ -3,22 +3,10 @@ import os
 import re
 import html
 
-
-# ============= Metadata retrieval =============
-def group_info(domains, group_meta):
-    params = {'group_id': '', 'version': '5.62', 'fields': 'members_count, screen_name'}
-    for domain in domains:
-        # making a query to API
-        params['group_id'] = domain
-        response = requests.get('https://api.vk.com/method/groups.getById', params=params)
-        group_json = response.json()['response'][0]
-        # adding group information
-        group_dict = {'domain': domain, 'group_id': int(group_json['gid']), 'members_count': int(group_json['members_count'])}
-        # adding information to list of group_dicts
-        group_meta.append(group_dict)
-    return group_meta
-
-
+'''
+                COMMON METHODS
+'''
+# clean lines from junk
 def clean_line(line):
     regTag = re.compile('<.*?>', flags=re.DOTALL)
     regLink = re.compile('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}', flags=re.DOTALL)
@@ -35,12 +23,37 @@ def clean_line(line):
 def save_new_info(old_route, new_posts):
     with open(old_route, 'r', encoding='utf-8') as f_read:
         posts = set(f_read.readlines())
-    with open(old_route, 'a', encoding='utf-8') as f_write:
-        for post in new_posts:
-            if not post in posts:
-                f_write.write(post)
+    if os.path.exists(old_route):
+        with open(old_route, 'a', encoding='utf-8') as f_write:
+            for post in new_posts:
+                if not post in posts:
+                    post = post + '\n'
+                    f_write.write(post)
+    else:
+        with open(old_route, 'w', encoding='utf-8') as f_write:
+            for post in new_posts:
+                if not post in posts:
+                    post = post + '\n'
+                    f_write.write(post)
 
 
+# metadata retrieval
+def group_info(domains, group_meta):
+    params = {'group_id': '', 'version': '5.62', 'fields': 'members_count, screen_name'}
+    for domain in domains:
+        # making a query to API
+        params['group_id'] = domain
+        response = requests.get('https://api.vk.com/method/groups.getById', params=params)
+        group_json = response.json()['response'][0]
+        # adding group information
+        group_dict = {'domain': domain, 'group_id': int(group_json['gid']), 'members_count': int(group_json['members_count'])}
+        # adding information to list of group_dicts
+        group_meta.append(group_dict)
+    return group_meta
+
+'''
+                    POSTS
+'''
 # =============     New posts    =============
 def get_new_posts(response):
     newPosts = set()
@@ -58,6 +71,7 @@ def get_new_posts(response):
 
 
 def write_posts(groups_meta):
+    # print('I\'m writing posts')
     parameters = {'version': '5.62', 'owner_id': '', 'count': '100'}
     for group in groups_meta:
         # posts retrieval
@@ -65,7 +79,7 @@ def write_posts(groups_meta):
         response = requests.get('https://api.vk.com/method/wall.get', params=parameters)
         # work with posts:
         new_posts = get_new_posts(response)
-        # 3. save posts
+        # save posts
         if os.path.exists(group['domain'] + '_posts.csv'):
             save_new_info(group['domain'] + '_posts.csv', new_posts)
         else:
@@ -73,9 +87,12 @@ def write_posts(groups_meta):
             with open(group['domain'] + '_posts.csv', 'w', encoding='utf-8') as f:
                 f.write('\n'.join(sorted(new_posts)))
 
-
+'''
+                    COMMENTS
+'''
 # =============     Information about commentators      =============
 def get_user_info(user_id):
+    print('I\'m getting user info!')
     parameters = {'version': '5.62', 'user_ids': user_id, 'fields': 'bdate, city, country, home_town, universities'}
     response = requests.get('https://api.vk.com/method/wall.users.get', params=parameters)
     if response:
@@ -86,20 +103,11 @@ def get_user_info(user_id):
 
 
 # =============     Comments    =============
-def save_comments(comments, group_id):
-    if os.path.exists(group_id + '_comments.csv'):
-        save_new_info(group_id + '_comments.csv', comments)
-    else:
-        with open(group_id + '_comments.csv', 'w', encoding='utf-8') as f:
-            for comment in comments:
-                f.write(comment)
-
-
-
 def get_comments(group_info):
-    comments = []
-    group_id = '-'+str(group_info['group_id'])
-    parameters = {'version': '5.62', 'owner_id': group_id, 'post_id': '', 'count': '100'}
+    # for particular group
+    comments = set()
+    owner_id = '-' + str(group_info['group_id'])
+    parameters = {'version': '5.62', 'owner_id': owner_id, 'post_id': '', 'count': '100'}
     try:
         if os.path.exists(group_info['domain'] + '_posts.csv'):
             with open(group_info['domain'] + '_posts.csv', 'r', encoding='utf-8') as f:
@@ -110,20 +118,22 @@ def get_comments(group_info):
                         parameters['post_id'] = post_id
                         response = requests.get('https://api.vk.com/method/wall.getComments', params=parameters)
                         if response:
-                        # if response.status_code() == 200:
                             comment_array = response.json()['response']
-                            # comment_array[0] -- comment total count
+                            # comment_array[0] — comment total count
                             for i in range(1, comment_array[0]):
-                                print('%d, %s' % (post_id, clean_line(comment_array[i]['text'])))
-                                comments.append(comment_array[i]['text'])
+                                if not clean_line(comment_array[i]['text']) == '':
+                                    comment = post_id + ',' + clean_line(comment_array[i]['text'])
+                                    comments.add(comment)
                     except:
-                        print('no comments :C')
-                    save_comments(comments, group_info['domain'])
+                        comments = set()
+                save_new_info(group_info['domain'] + '_comments.csv', comments)
     except:
-        comments = ''
+        comments = []
 
 
-
+'''
+                    MAIN
+'''
 def main():
     domains = ['meduzaproject', 'oldlentach', 'noolhistorical']
     # groups_meta — list with dictionaries containing metadata of groups
