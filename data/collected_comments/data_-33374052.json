@@ -1,0 +1,41 @@
+{
+  "117": [
+    {
+      "text": "ЗАКАЗЫВАЕМ ЛАКИ, которые светятся в темноте!<br>25 грн за штуку. при покупке 3 и более- 20 грн"
+    },
+    [
+      {
+        "from_id": 98927050,
+        "text": "хочу..",
+        "reply_to_uid": 0
+      },
+      {
+        "from_id": 41637615,
+        "text": "[id98927050|Юля], ок",
+        "reply_to_uid": 98927050
+      },
+      {
+        "from_id": 145004295,
+        "text": "Как заказать?",
+        "reply_to_uid": 0
+      }
+    ]
+  ],
+  "135": [
+    {
+      "text": "Срочно!!!<br>Делаю общий заказ часов из Китая!!<br>Все часы по 45 грн! Каждая модель есть в разных цветах. Выбирая модель пишите какой цвет хотите."
+    },
+    [
+      {
+        "from_id": 282062497,
+        "text": "http://www.aliexpress.eu.com/redirect/cpa/o/eed98b1ff21a2333616bcfdf93fd0dc0/?to=http://ru.aliexpress.com/item/Attractive-1PC-Funny-Pet-Toy-Personality-Big-Dogs-Lips-Wacky-A-voice-Toy/32264113570.html",
+        "reply_to_uid": 0
+      },
+      {
+        "from_id": 296166566,
+        "text": "http://www.alipromo.com/redirect/cpa/o/eed98b1ff21a2333616bcfdf93fd0dc0/?sub=bizh3006&to=http://ru.aliexpress.com/item/21015-spring-new-arrival-moir-girl-Sleeveless-Tank-Solid-Dress/32302811510.html",
+        "reply_to_uid": 0
+      }
+    ]
+  ]
+}

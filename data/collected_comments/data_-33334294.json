@@ -1,0 +1,61 @@
+{
+  "4": [
+    {
+      "text": "а вот эта?! может и туда написать?!"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 8426304,
+        "text": "даа вот это хорошая!<br>щас напишу!"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 8426304,
+        "text": "там некуда писать)"
+      }
+    ]
+  ],
+  "5": [
+    {
+      "text": "19.12.11<br> nedvizhimost.slando.spb.ru/sankt-peterburg/elitnaya-4-kkv-s-ik-saunoy-ot-hozyaev-v-tsentre-s-pb-140-kv-m-posutochno_P_53373333.html?nrk=RU-LEN&search_terms=&min_price=&max_price...=<br><br> nedvizhimost.slando.spb.ru/sankt-peterburg/predlagaem-vam-uyutnuyu-2k-kvartiru-na-chas-sutki-nedelyu_P_53275117.html?nrk=RU-LEN&search_terms=&min_price=&max_price=<br> nedvizhimost.slando.spb.ru/sankt-peterburg/sdam_2_k_kv_u_metro_pl_vosstaniya_evro_P_27114587.html?nrk=RU-LEN&search_terms=&min_price=&max_price="
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 5583768,
+        "text": "ну бля самая четка за 5500"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 8426304,
+        "text": "потому что она с сауной!)"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 5583768,
+        "text": "нутакида)"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 8426304,
+        "text": "тебя там окончательно вмажет)"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 5583768,
+        "text": "Так что с квартирой то делать? Когда с ним встретится или что?"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 8426304,
+        "text": "давай короче поговорим с той,где сайна)"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 5583768,
+        "text": "ну да) так договорись)"
+      }
+    ]
+  ]
+}

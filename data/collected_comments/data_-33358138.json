@@ -1,0 +1,36 @@
+{
+  "738": [
+    {
+      "text": "еду карочи .<br><br>twitter.com/mr_antocha<br>http://nekto.me/mr_antocha<br>http://sprashivai.ru/mr_antocha"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 119481388,
+        "text": "тот который говорил что нельзя своё кидать,от своего имени"
+      },
+      {
+        "reply_to_uid": 119481388,
+        "from_id": 121172103,
+        "text": "[id119481388|Антон], тот который создатель и которому все можно"
+      },
+      {
+        "reply_to_uid": 121172103,
+        "from_id": 119481388,
+        "text": "[id121172103|Antonio], ммм"
+      }
+    ]
+  ],
+  "766": [
+    {
+      "text": ""
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 41519186,
+        "text": "https://vk.com/photo-33358138_314362541"
+      }
+    ]
+  ]
+}

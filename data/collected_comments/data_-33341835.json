@@ -1,0 +1,43 @@
+{
+  "1": [
+    {
+      "text": "Всем Хаюськи"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 71787352,
+        "text": "привет.зай"
+      }
+    ]
+  ],
+  "19": [
+    {
+      "text": "Всем привет!!!"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 97594988,
+        "text": "ну здарова"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 71787352,
+        "text": "привет"
+      }
+    ]
+  ],
+  "12": [
+    {
+      "text": "MIND MIND MIND MIND MIND [COUNTER STRIKE]"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 89862607,
+        "text": "фу да я не так делал"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "160": [
+    {
+      "text": "Рады вам сообщить что мы открыли сервер клана |Kefir prod.|™ мы рады будем видеть вас на Public-46.174.52.16:27211 . С уважение Администрация."
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 139230442,
+        "text": "http://forhacks.ru/ Набор в команду форума <br><br> <br>Кратко о должности модератор<br><br> <br>Модератор должен следить за форумом, помогать пользователям,<br>создавать новые темы-добавлять файлы,заливать файлы на платный хостинг.<br>В скором времени будут добавлены новые разделы! <br> Наш сайт Forhacks.ru"
+      }
+    ]
+  ],
+  "98": [
+    {
+      "text": "вы писали команду как понизить пинг, что в консоль прописать чтобы показывался настоящий пинг а не 5??"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "Попробуй написать ту же команду ."
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 45491641,
+        "text": "ping или status"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 166854859,
+        "text": "напишите просто connect и сервер например connect 91.241.16.148:27015"
+      }
+    ]
+  ],
+  "101": [
+    {
+      "text": "Кто под каким ником играет???"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 45491641,
+        "text": "๖ۣۜKiLLRoY"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 174030939,
+        "text": "-=КрУтОй ПоЦыК=-"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 172316512,
+        "text": "&lt;DOC&gt; Killer[cyx] [K] C"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 158025708,
+        "text": "авапер 102_rus"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 202271578,
+        "text": "^_^${smert}$^_^"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 90439433,
+        "text": "омон116кгы"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 90439433,
+        "text": "сервак скиньте"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 192073710,
+        "text": "|+18| BASHKIRIA _102rus | v34 |<br> Адрес сервера: 46.174.48.49:27266"
+      }
+    ]
+  ],
+  "12": [
+    {
+      "text": "Есть ссылка на скины?"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 75460676,
+        "text": "нормальная группа"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 119298187,
+        "text": "ссылка на моды для замены вида оружия и скины найдя в калонке слева модели игроков.Ссылка http://csfobia.ru/load/cs_source/modeli_oruzhija/106-5-2"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 142185342,
+        "text": "дайте сервер нормальный который работает"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "213.171.35.177:27045"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 139996093,
+        "text": "дайте сервер детматч"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "46.174.52.2:27250"
+      }
+    ]
+  ],
+  "26": [
+    {
+      "text": "Заходите на мордовский сервер Динамит"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 103074177,
+        "text": "85.95.184.17:27016"
+      }
+    ]
+  ],
+  "60": [
+    {
+      "text": "помогите разобратся в сервах пишет что нельзя на серва зайти у меня версиия v34"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "Может быть просто не идёт серв , может серв отключен , если ты записываешь серв через кансоль то пиши \"connect\". <br><br>Вот сервы на которых в основном я играю -<br>46.174.48.45:27283<br>213.21.3.87:27016       <br>83.222.97.199:27218   <br>46.174.52.73:27015"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 171555123,
+        "text": "а кудаих вписывать))"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 171555123,
+        "text": "вот чо  я  сервак вставил вот чо"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 171555123,
+        "text": "maxplayers set to 32<br>Heap: 256.00 Mb<br>Parsed 352 text messages<br>Couldn't find custom font file 'resource/HL2EP2.ttf'<br>Couldn't find custom font file 'materials/vgui/fonts/buttons_32.vbf'<br>execing config.cfg<br>Can't use cheat cvar cl_upspeed in multiplayer, unless the server has sv_cheats set to 1.<br>Can't use cheat cvar cl_forwardspeed in multiplayer, unless the server has sv_cheats set to 1.<br>Can't use cheat cvar cl_backspeed in multiplayer, unless the server has sv_cheats set to 1.<br>Can't use cheat cvar dsp_dist_max in multiplayer, unless the server has sv_cheats set to 1.<br>Can't use cheat cvar dsp_dist_min in multiplayer, unless the server has sv_cheats set to 1.<br>Can't use cheat cvar r_ambientfraction in multiplayer, unless the server has sv_cheats set to 1.<br>3 CPUs, Frequency: 2.9 Ghz,  Features: AuthenticAMD SSE SSE2 MMX 3DNow RDTSC CMOV FCMOV<br>execing valve.rc<br>execing autoexec.cfg<br>] \"connect\".77.220.184.206:27448<br>Network: IP 192.168.1.2, mode MP, dedicated No, ports 27015 SV / 27005 CL<br>Bad server address (.77.220.184.206:27448)"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "Запускаешь контру открывается кансоль , пишешь - connect ip сервера  . Дальше , если не заходит серв,то утвердись что ip - адрес сервера написан правильно."
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 171555123,
+        "text": "я в переводчике все эту фигню перевел пишет у мя какойто чит WTF???"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "Ты скачивал контру с инета или покупал?"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 171555123,
+        "text": "[club33353431|всё для css v34], друг скачал"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "Попробуй скачать новую  css, может твой друг когда нибудь кидал чит в css и вот не можешь зайти,можешь скачать css через торрент и можешь ещё найти в обсуждениях."
+      }
+    ]
+  ],
+  "45": [
+    {
+      "text": "Клёвый сервер css v34 администрация кульная сервер без лагов сервер работает 24 часа в сутки вот ip 46.174.48.14:27413 заходим все!!!"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 145410800,
+        "text": "это зомби"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": -33353431,
+        "text": "77.220.184.206:27448"
+      }
+    ]
+  ],
+  "158": [
+    {
+      "text": "Клан есть ???"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 139230442,
+        "text": "http://forhacks.ru/ Набор в команду форума <br><br> <br>Кратко о должности модератор<br><br> <br>Модератор должен следить за форумом, помогать пользователям,<br>создавать новые темы-добавлять файлы,заливать файлы на платный хостинг.<br>В скором времени будут добавлены новые разделы! <br> Наш сайт Forhacks.ru"
+      }
+    ]
+  ],
+  "53": [
+    {
+      "text": "Вот коды для css v34 <br>cl_predictweapons 0 - 2-ые патроны <br>cl_crosshairscale 999999 - маленький прицел <br> cl_cmdrate 5 - пинг 5 <br> <br>Кто знает ещё какие коды добавляйте."
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 172316512,
+        "text": "sv_gravity [-999-999999] - летать"
+      },
+      {
+        "reply_to_uid": 0,
+        "from_id": 172316512,
+        "text": "sv_gravity 800 - выключить гравитацию"
+      }
+    ]
+  ]
+}

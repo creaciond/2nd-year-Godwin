@@ -1,0 +1,38 @@
+{
+  "24": [
+    {
+      "text": "What`s ?"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 136504494,
+        "text": "что это ???"
+      }
+    ]
+  ],
+  "23": [
+    {
+      "text": "Играете в World of Tanks ?"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 136504494,
+        "text": "Nope"
+      }
+    ]
+  ],
+  "39": [
+    {
+      "text": "Persona 5 выйдет на PS4 в следующем году"
+    },
+    [
+      {
+        "reply_to_uid": 0,
+        "from_id": 178452073,
+        "text": "на PS3 тоже"
+      }
+    ]
+  ]
+}
