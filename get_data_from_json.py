@@ -48,7 +48,7 @@ def data_update(data, data_json):
 
 
 def write_data(data, filename):
-    file = './data/' + filename + '.txt'
+    file = './data/' + filename + '.tsv'
     with open(file, 'w', encoding='utf-8') as f:
         for item in data:
             line = item + '\n'
