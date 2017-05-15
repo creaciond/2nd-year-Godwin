@@ -27,6 +27,11 @@ def search_nazi(current_lines, lines, nazi_ar_regex, camps_ar_regex):
     return current_lines
 
 
+def save_Godwins_lines(Godwins_lines):
+    with open('./data/Godwins_lines.tsv', 'w', encoding='utf-8') as file_write:
+        file_write.write('\n'.join(Godwins_lines))
+
+
 def main():
     # generate regular expressions only once
     nazi, camps = nazi_regex()
@@ -38,6 +43,7 @@ def main():
                 lines = f.readlines()
                 # the result stays in lines_Godwins_law (unique!)
                 lines_Godwins_law = search_nazi(lines_Godwins_law, lines, nazi, camps)
+    save_Godwins_lines(lines_Godwins_law)
 
 
 if __name__ == '__main__':
