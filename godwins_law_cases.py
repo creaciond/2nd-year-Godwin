@@ -38,14 +38,6 @@ def main():
                 lines = f.readlines()
                 # the result stays in lines_Godwins_law (unique!)
                 lines_Godwins_law = search_nazi(lines_Godwins_law, lines, nazi, camps)
-    # check if any
-    if lines_Godwins_law:
-        for line in sorted(lines_Godwins_law):
-            print(line)
-    else:
-        print('fuck, no lines with Hitler')
-    print(len(lines_Godwins_law))
-
 
 
 if __name__ == '__main__':
