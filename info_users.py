@@ -55,7 +55,7 @@ def get_info_users(posts, group_id):
             else:
                 age = 0
         except:
-            bday = 0
+            age = 0
         # City retrieval
         try:
             if response.json()['response'][0]['city']:
@@ -70,13 +70,13 @@ def get_info_users(posts, group_id):
             country = ''
         # All together
         data = [str(post[0]), age, city, country]
-        users_info[str(post[0])] = data
+        users_info['\t'.join(post)] = data
     return users_info
 
 
 # =========== Add information to posts ==========
 def add_user_info(post, data):
-    data = [str(x) for x in data]
+    data = [str(data[i]) for i in range(1, len(data))]
     line = '\t' + '\t'.join(data)
     post_line = '\t'.join(post) + line
     return post_line
