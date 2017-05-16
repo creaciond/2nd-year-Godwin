@@ -43,12 +43,14 @@ def city_and_country(object_id, type):
 
 
 def get_info_users(posts_and_group_ids):
-    parameters = {'version': '5.64', 'user_ids': '', 'fields': 'bdate, city, country, home_town, universities'}
+    parameters = {'version': '5.64', 'user_ids': '', 'fields': 'bdate, sex, city, country, home_town, universities'}
     users_info = {}
     for post in posts_and_group_ids:
         parameters['user_ids'] = str(posts_and_group_ids[post])
         link = 'https://api.vk.com/method/users.get'
         response = requests.get(link, params=parameters)
+        # sex
+        sex = response['response'][0]['bdate']
         # Age retrieval
         try:
             if len(response.json()['response'][0]['bdate'].split('.')) == 3:
@@ -70,7 +72,7 @@ def get_info_users(posts_and_group_ids):
         except:
             country = ''
         # All together
-        data = [str(post[0]), age, city, country]
+        data = [str(post[0]), sex, age, city, country]
         users_info['\t'.join(post)] = data
     return users_info
 
