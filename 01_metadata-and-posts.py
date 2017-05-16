@@ -61,7 +61,7 @@ def get_new_posts(response, group_info):
             if item['post_type'] == 'post':
                 # all text in one line instead of many lines
                 item['text'] = item['text'].replace('\n', ' ')
-                post = '$s\t%s\t%d\t%s' % (group_info['group_id'], item['post_type'], item['id'], item['text'])
+                post = '$s\t%s\t%d\t%s' % (group_info['group_id'], item['post_type'], item['id'], clean_line(item['text']))
                 if not post == '':
                     newPosts.add(clean_line(post))
         except:
