@@ -21,20 +21,19 @@ def clean_line(line):
 
 
 def save_new_info(old_route, new_posts):
-    with open(old_route, 'r', encoding='utf-8') as f_read:
-        posts = set(f_read.readlines())
+    # if file already existed
     if os.path.exists(old_route):
+        with open(old_route, 'r', encoding='utf-8') as f_read:
+            posts = set(f_read.readlines())
         with open(old_route, 'a', encoding='utf-8') as f_write:
             for post in new_posts:
                 if not post in posts:
                     post = post + '\n'
                     f_write.write(post)
+    # file doesn't exist
     else:
         with open(old_route, 'w', encoding='utf-8') as f_write:
-            for post in new_posts:
-                if not post in posts:
-                    post = post + '\n'
-                    f_write.write(post)
+                f_write.write('\n'.join(new_posts))
 
 
 # metadata retrieval
