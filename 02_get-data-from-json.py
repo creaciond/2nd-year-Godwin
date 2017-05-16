@@ -41,10 +41,10 @@ def data_from_dict(comments_dict, file_path):
     return posts, comments
 
 
-def data_update(data, data_json):
+def data_update(group_id, data, data_json):
     for item in data_json:
         if item not in data:
-            data.add(item)
+            data.add(group_id + '\t' + item)
     return data
 
 
@@ -52,7 +52,7 @@ def write_data(data, filename):
     file = './data/' + filename + '.tsv'
     with open(file, 'w', encoding='utf-8') as f:
         for item in data:
-            line = item + '\n'
+            line = '\t' + item + '\n'
             f.write(line)
 
 
@@ -61,10 +61,11 @@ def main():
     posts_total = set()
     for file in os.listdir('./data/comments'):
         if file.endswith('.json'):
+            group_id = file.split('_-')[1].strip('\.json')
             comments_dict = json.loads(get_data_from_file(file))
             posts_json, comments_json = data_from_dict(comments_dict, file)
-            comments_total = data_update(comments_total, comments_json)
-            posts_total = data_update(posts_total, posts_json)
+            comments_total = data_update(group_id, comments_total, comments_json)
+            posts_total = data_update(group_id, posts_total, posts_json)
     write_data(comments_total, 'comments')
     write_data(posts_total, 'posts')
 

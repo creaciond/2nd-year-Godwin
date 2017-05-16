@@ -110,8 +110,8 @@ def write_posts(group_meta):
 
 def get_post_ids(domain):
     path = './data/' + domain + '_posts.tsv'
+    post_ids_ar = []
     if os.path.exists(path):
-        post_ids_ar = []
         with open(path, 'r', encoding='utf-8') as f:
             for post in f.readlines():
                 post_ids_ar.append(post.split('\t')[1])
@@ -141,20 +141,18 @@ def get_comments(group_info):
     owner_id = '-' + str(group_info['group_id'])
     parameters = {'version': '5.62', 'owner_id': owner_id, 'post_id': '', 'count': '100'}
     post_ids = get_post_ids(group_info['domain'])
+    count = 0
     for post_id in post_ids:
-        print('Working with post %s' % post_id)
+        count += 1
         parameters['post_id'] = post_id
         response = requests.get('https://api.vk.com/method/wall.getComments', params=parameters)
         if response.json()['response'][0] > 100:
-            print('more than 100 comments')
             for i in range(response.json()['response'][0] % 100 + 1):
                 comments = api_comments(comments, parameters, i*100)
         else:
-            print('less than 100 comments')
             # offset = 0
             comments = api_comments(comments, parameters, 0)
     save_new_info('./data/' + group_info['domain'] + '_comments.tsv', comments)
-    print('Done with %s' % group_info['domain'])
 
 
 '''
@@ -166,7 +164,7 @@ def main():
     groups_meta = []
     groups_meta = group_info(domains, groups_meta)
     for group_meta in groups_meta:
-        # write_posts(group_meta)
+        write_posts(group_meta)
         get_comments(group_meta)
 
 
