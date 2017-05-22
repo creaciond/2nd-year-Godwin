@@ -1,6 +1,6 @@
-./.idea
-./__pycache__
-./test.py
-./data/comments
-./data/clean_lines.py
-./data/reserve
+.idea
+__pycache__
+test.py
+/data/comments
+/data/clean_lines.py
+/data/reserve
