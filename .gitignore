@@ -4,3 +4,5 @@ test.py
 /data/comments
 /data/clean_lines.py
 /data/reserve
+/data/*.tsv
+/tomita/tomita-mac
