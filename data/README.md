@@ -1,0 +1,1 @@
+Все данные лежат на [гугл-диске](https://drive.google.com/open?id=0ByKwDDZBrG9HUDNVbTJUM0RpYjA) — файлы ```.tsv```, общий размер — около 300 Мб.
