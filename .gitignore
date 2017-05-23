@@ -1,8 +1,10 @@
 .idea
 __pycache__
 test.py
+count-length.py
 /data/comments
 /data/clean_lines.py
 /data/reserve
 /data/*.tsv
+/data/*.py
 /tomita/tomita-mac
