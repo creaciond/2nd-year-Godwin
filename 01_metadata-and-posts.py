@@ -12,10 +12,12 @@ def clean_line(line):
     regLink = re.compile('https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,}', flags=re.DOTALL)
     regName = re.compile('\[id[0-9]+?|.*?\], ', flags=re.DOTALL)
     regHashtag = re.compile('#.? ', flags=re.DOTALL)
+    regBegin = re.compile('^-')
     line = regTag.sub('', line)
     line = regLink.sub('', line)
     line = regName.sub('', line)
     line = regHashtag.sub('', line)
+    line = regBegin.sub('', line)
     line = html.unescape(line)
     return line
 
