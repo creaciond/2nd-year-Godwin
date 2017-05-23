@@ -32,6 +32,8 @@ Something similar for reddit is [here](http://www.zmescience.com/science/news-sc
 * газеттиры.
 
 Папка ```results``` используется для складирования всех результатов и полученных графиков-визуализаций.
+### Данные
+Лежат на [гугл-диске](https://drive.google.com/open?id=0ByKwDDZBrG9HUDNVbTJUM0RpYjA) — файлы ```.tsv```, общий размер — около 300 Мб.
 
 ### Ход программы:
 
