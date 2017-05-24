@@ -9,7 +9,8 @@ def nazi_regex():
     himmler_regex = re.compile('[Гг]имм?лер')
     hering_regex = re.compile('[Гг]ерр?инг')
     hess_regex = re.compile('[Гг]есс?')
-    nazi_regex = [hitler_regex, hebbels_regex, himmler_regex, hering_regex, hess_regex]
+    ribbentrop_regex = re.compile('[Рр]ибб?ентроп')
+    nazi_regex = [hitler_regex, hebbels_regex, himmler_regex, hering_regex, hess_regex, ribbentrop_regex]
     # concentration camps regular expressions
     auschwitz_regex = re.compile('[Оо]свенцим')
     buchenwald_regex = re.compile('[Бб]ухенвальд')
