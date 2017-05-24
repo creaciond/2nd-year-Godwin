@@ -2,15 +2,17 @@ import requests
 
 # ========== Read file with posts ==========
 def read_file(filepath):
-    with open(filepath, 'r', encoding='utf-8') as f_posts:
-        posts = f_posts.readlines()
+    posts = []
     posts_and_and_group_ids = []
-    for post in posts:
-        post_separated = post.split('\t')
-        # post_separated[0] -- group_id, post_separated[1] -- from_id
-        posts_and_and_group_id = {post_separated[0]:post_separated[1].strip('\n')}
-        posts_and_and_group_ids.append(posts_and_and_group_id)
-    return posts_and_and_group_ids
+    with open(filepath, 'r', encoding='utf-8') as f_posts:
+        for post in f_posts.readlines():
+            post_separated = post.split('\t')
+            # post_separated[0] -- group_id, post_separated[1] -- from_id
+            if len(post_separated) == 3:
+                posts_and_and_group_id = [post_separated[0], post_separated[1]]
+                posts_and_and_group_ids.append(posts_and_and_group_id)
+                posts.append(post)
+    return posts, posts_and_and_group_ids
 
 
 # =========== Get info about things ==========
@@ -44,13 +46,16 @@ def city_and_country(object_id, type):
 
 def get_info_users(posts_and_group_ids):
     parameters = {'version': '5.64', 'user_ids': '', 'fields': 'bdate, sex, city, country, home_town, universities'}
-    users_info = {}
-    for post in posts_and_group_ids:
-        parameters['user_ids'] = str(posts_and_group_ids[post])
+    users_info = []
+    for i in range(len(posts_and_group_ids)):
+        parameters['user_ids'] = str(posts_and_group_ids[i][0])
         link = 'https://api.vk.com/method/users.get'
         response = requests.get(link, params=parameters)
         # sex
-        sex = response['response'][0]['bdate']
+        try:
+            sex = response.json()['response'][0]['sex']
+        except:
+            sex = 'NaN'
         # Age retrieval
         try:
             if len(response.json()['response'][0]['bdate'].split('.')) == 3:
@@ -64,16 +69,17 @@ def get_info_users(posts_and_group_ids):
             if response.json()['response'][0]['city']:
                 city = city_and_country(response.json()['response'][0]['city'], 'city')
         except:
-            city = ''
+            city = 'NaN'
         # Country retrieval
         try:
             if response.json()['response'][0]['country']:
                 country = city_and_country(response.json()['response'][0]['city'], 'country')
         except:
-            country = ''
+            country = 'NaN'
         # All together
-        data = [str(post[0]), sex, age, city, country]
-        users_info['\t'.join(post)] = data
+        user_data = [str(sex), str(age), city, country]
+        data = '\t'.join(user_data)
+        users_info.append(data)
     return users_info
 
 
@@ -85,24 +91,25 @@ def add_user_info(post, data):
     return post_line
 
 
-def update_posts(posts, user_data, fname):
-    filename = './data/' + fname
-    posts_string = []
-    for i in range(len(posts)):
-        if i < len(user_data):
-            user = list(user_data.keys())[i]
-            post_string = add_user_info(posts[i], user_data[user])
-            posts_string.append(post_string)
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write('\n'.join(posts_string))
+def update_posts(posts_array, user_data, fname):
+    new_posts = []
+    if len(posts_array) == len(user_data):
+        for i in range(len(posts_array)):
+            post = posts_array[i].strip('\n') + '\t' + user_data[i]
+            new_posts.append(post)
+            print(post)
+    else:
+        print('i\'ve got a fuckup')
+    with open(fname, 'w', encoding='utf-8') as file:
+        file.write('\n'.join(new_posts))
 
 
 # =========== MAIN ==========
 def main():
     file = './data/Godwins_lines.tsv'
-    posts = read_file(file)
-    users_info = get_info_users(posts)
-    update_posts(posts, users_info, './data/Godwins_lines.tsv')
+    posts_ar, posts_info = read_file(file)
+    users_info = get_info_users(posts_info)
+    update_posts(posts_ar, users_info, file)
 
 
 if __name__ == '__main__':
